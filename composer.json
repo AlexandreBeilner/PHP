@@ -1,0 +1,9 @@
+{
+  "name": "ixcdoft/projeto-aulas-php",
+  "description": "AULA 2",
+  "autoload": {
+    "psr-4": {
+
+    }
+  }
+}

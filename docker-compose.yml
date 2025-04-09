@@ -1,0 +1,22 @@
+services:
+  php-74-cli:
+    build:
+      context: docker/php/74-cli
+      dockerfile: Dockerfile
+    volumes:
+      - .:/opt/project
+  php-74-fpm:
+    build:
+      context: docker/php/74-fpm
+      dockerfile: Dockerfile
+    volumes:
+      - .:/opt/project
+  nginx-php-74:
+    image: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/opt/project
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - php-74-fpm
