@@ -2,11 +2,13 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use App\Impl\Example;
+use App\Impl\JsonFormatter;
+use App\Impl\CsvFormatter;
 
-$example = new Example();
+//$example = new JsonFormatter();
+$example = new CsvFormatter();
 
-$message = $example->greet('mundo viaa web');
+$message = $example->format(['id' => 'dados', 'name' => 'aqui']);
 ?>
 
 <!DOCTYPE html>
